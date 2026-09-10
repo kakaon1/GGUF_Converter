@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>gguf_Converter</RootNamespace>
+    <AssemblyName>gguf_Converter</AssemblyName>
+
+    <!-- 실행 파일 아이콘 (탐색기 / 작업표시줄에서 보이는 아이콘) -->
+    <ApplicationIcon>app.ico</ApplicationIcon>
+
+    <!-- 지침 4번 152행 "pdb 파일은 생성되지 않아야 한다"
+         지침 176~185행 예시는 DebugType 을 Release 조건부에만 두지만,
+         VS 기본 구성이 Debug 이므로 그것만으로는 pdb 생성을 막지 못한다.
+         DebugType 은 플랫폼 제약과 무관하여 전역에 두어도 디자이너에 영향이 없다.
+         (RuntimeIdentifier 전역 이동은 금지 — 지침 172~174행) -->
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+
+    <!-- 지침 4번 규칙 3 : 기본 폰트 속성은 이 파일에 넣지 않는다.
+         디자인타임 파싱 실패로 디자이너 로드가 막힌다.
+         폰트는 Program.cs 에서 Application.SetDefaultFont 로 설정한다. -->
+  </PropertyGroup>
+
+  <!-- 지침 4번 규칙 4 : Publish 전용 설정은 반드시 Release 조건부로 분리한다. -->
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <PublishDir>bin\Release\Publish\</PublishDir>
+  </PropertyGroup>
+
+  <!-- 지침 4번 규칙 2 : 디자이너 파일 짝 연결
+       SubType 은 지침 예시에 없으나, csproj.user 에 의존하지 않고
+       VS 가 Form1.cs 를 폼으로 인식하도록 명시한다. -->
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- 폼 아이콘용 : app.ico 를 어셈블리에 포함시켜 런타임에 스트림으로 읽는다.
+       (Form1.cs 의 LoadFormIcon 참조) -->
+  <ItemGroup>
+    <EmbeddedResource Include="app.ico" />
+  </ItemGroup>
+
+  <!-- 지침 4번 Publish 자동화 : Release 빌드 시 자동으로 단일 파일 게시 수행 -->
+  <Target Name="AutoPublish"
+          AfterTargets="Build"
+          Condition="'$(Configuration)'=='Release' AND '$(AutoPublishRunning)'!='true'">
+    <Exec Command="dotnet publish &quot;$(MSBuildProjectFullPath)&quot; -c Release -r win-x64 --self-contained true /p:AutoPublishRunning=true" />
+  </Target>
+
+</Project>

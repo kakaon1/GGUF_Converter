@@ -1,0 +1,14 @@
+C:\Users\Administrator\Desktop\gguf_Converter\bin\Debug\net8.0-windows\gguf_Converter.exe
+C:\Users\Administrator\Desktop\gguf_Converter\bin\Debug\net8.0-windows\gguf_Converter.deps.json
+C:\Users\Administrator\Desktop\gguf_Converter\bin\Debug\net8.0-windows\gguf_Converter.runtimeconfig.json
+C:\Users\Administrator\Desktop\gguf_Converter\bin\Debug\net8.0-windows\gguf_Converter.dll
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.Form1.resources
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.dll
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\refint\gguf_Converter.dll
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\gguf_Converter.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\gguf_Converter\obj\Debug\net8.0-windows\ref\gguf_Converter.dll

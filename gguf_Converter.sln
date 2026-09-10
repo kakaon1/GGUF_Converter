@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gguf_Converter", "gguf_Converter.csproj", "{3F1A8C42-9D7E-4B65-8A11-0C2E7B4D5E90}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F1A8C42-9D7E-4B65-8A11-0C2E7B4D5E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1A8C42-9D7E-4B65-8A11-0C2E7B4D5E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1A8C42-9D7E-4B65-8A11-0C2E7B4D5E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1A8C42-9D7E-4B65-8A11-0C2E7B4D5E90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B2C1D77-4A63-45E2-9F30-6D8E1A5C7B24}
+	EndGlobalSection
+EndGlobal
